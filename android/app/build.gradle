@@ -1,3 +1,17 @@
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.12.8, 0.99.99]'
+    }
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -28,13 +42,21 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 android {
     compileSdkVersion 29
 
+    defaultConfig {
+        manifestPlaceholders = [
+                onesignal_app_id: '7f7c1b43-a81a-4dd2-ba37-4d9d894d29b8',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
+    }
+
     lintOptions {
         disable 'InvalidPackage'
     }
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "co.appbrewery.flash_chat"
+        applicationId "com.samyush.messagingapp"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
@@ -55,6 +77,14 @@ flutter {
     source '../..'
 }
 
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+
 dependencies {
+    implementation 'com.onesignal:OneSignal:[3.15.0, 3.99.99]'
     implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
 }
+
