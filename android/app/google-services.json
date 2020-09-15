@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "180267095045",
+    "firebase_url": "https://messagingapp-d0b2c.firebaseio.com",
+    "project_id": "messagingapp-d0b2c",
+    "storage_bucket": "messagingapp-d0b2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180267095045:android:926f87697ae99e88e9386c",
+        "android_client_info": {
+          "package_name": "com.samyush.messagingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180267095045-m66oi1b9pr7o1dup53kh2iihavqpbvar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARD8XrBHUGKG8-qVlBY46xL9eYS9web_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180267095045-m66oi1b9pr7o1dup53kh2iihavqpbvar.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
